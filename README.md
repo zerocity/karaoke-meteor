@@ -1,0 +1,4 @@
+karaoke-meteor
+==============
+
+Karaoke webapp
