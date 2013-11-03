@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "router": {},
+    "bootstrap3-less": {},
+    "iron-router": {},
+    "moment": {}
+  }
+}

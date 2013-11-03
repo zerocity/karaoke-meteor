@@ -1,0 +1,42 @@
+<template name="songs">
+
+  <div class="row">
+    <div class="input-group">
+      <input id="event_search_input" type="text" class="form-control" placeholder="exp Raumstein">
+      <div class="input-group-btn ">
+        <a class="btn button btn-primary" id="event_search_submit">Song Search <span class="glyphicon glyphicon-play"></span></a>
+      </div>
+    </div>
+    <br>
+
+		{{#if getSongsLength}}
+			<p>Found {{getSongsLength}} songs  </p>
+		{{/if}}
+
+		{{#each getSongs}}
+			<a href="#" class="eventCheckInUser">
+				<p class="song">{{artist}} - {{title}}</p>
+			</a>
+			<div id="{{_id}}" class="hide"> 
+				<form class="form-inline" role="form">
+				  <div class="form-group">
+				    <input type="text" class="form-control inputUserName" placeholder="Enter Nickname">
+				  </div>
+				  <button type="button" class="btn btn-default eventAddUser">Sign in</button>
+				</form>
+			</div>
+		{{/each}}
+  </div>
+</template>
+
+<template name="queue">
+  <div class="row">
+		<p>{{getQueueLength}} songs are queued   </p>
+
+		{{#each getQueue}}
+			<a href="#">
+				<p class="song">{{dateFormat date format="HH:mm:ss"}}  - {{artist}} - {{title}}<span class="label label-default">{{user}}</span></p>
+			</a>
+		{{/each}}
+  </div>
+</template>
